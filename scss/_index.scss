@@ -1,0 +1,645 @@
+
+html{
+    font-size: 62%;
+}
+
+
+.fondo{
+    height: 100%;
+    background-image: url(../img/lapachos.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    &:before{
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        background: linear-gradient(to right, rgba(6, 133, 165, 0.4), rgba(167, 93, 216, 0.5));     
+    }
+}
+
+.usuario{
+    position: relative;
+    @include d-flex(row, end, stretch);
+    margin: 20px 20px 0 0;
+    @include medias(Sm){
+        margin: 30px 40px 0 0;
+    }
+    @include medias(Md){
+        margin: 30px 50px 0 0;
+    }
+    @include medias(Xl){
+        margin: 40px 60px 0 0;
+    }
+
+    img{
+        width: 18px;
+        height: 18px;
+        margin-right: 5px;
+        @include medias(Sm){
+            width: 20px;
+            height: 20px;
+            margin-right: 8px; 
+        }
+        @include medias(Xl){
+            width: 25px;
+            height: 25px;
+            margin-right: 10px; 
+        }
+    }
+
+    p{
+        font-family: $secFont;
+        color: white;
+        font-size: 1.2rem;
+        padding-top: 3px;
+        @include medias(Sm){
+            font-size: 1.3rem;
+            padding-top: 2.5px;
+        }
+        @include medias(Md){
+            font-size: 1.4rem;
+            padding-top: 2px;
+        }
+        @include medias(Xl){
+            font-size: 1.5rem;
+            padding-top: 5px;
+        }
+    }
+
+    .btnSalir{
+        @extend .btnBase;
+        border-radius: 90px;
+        margin-left: 10px;
+        width: 65px;
+        height: 20px;
+        font-size: 1rem;
+        box-shadow: 2px 2px 4px rgb(255, 254, 254);
+        @include medias(Xs){
+            width: 65px;
+            height: 22px;
+            margin-left: 15px;
+        }
+        @include medias(Md){
+            width: 85px;
+            height: 25px;
+            font-size: 1.2rem;
+            margin-left: 20px;
+        }
+        @include medias(Lg){
+            width: 95px;
+            height: 30px;
+            font-size: 1.3rem;
+        }
+    }
+}
+
+#botonMiLista{
+    width: 65px;
+    font-size: 1rem;
+    margin-left: 15px;
+    @include medias(Xs){
+        height: 22px;
+    }
+    @include medias(Sm){
+        margin-left: 25px;
+    }
+    @include medias(Md){
+        width: 85px;
+        height: 25px;
+        font-size: 1.2rem;
+        margin-left: 40px;
+    }
+    @include medias(Lg){
+        width: 95px;
+        height: 30px;
+        font-size: 1.3rem;
+    }
+}
+
+
+.formulario{
+    position: relative;
+    background: $offWhite;
+    width: 70%;
+    height: auto;
+    border-radius: 2px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+    @include medias(Xs){
+        width: 60%;
+    }
+    @include medias(Md){
+        width: 50%;
+    }
+    @include medias(Xl){
+        width: 40%;
+    }
+
+    label{
+        font-family: $secFont;
+        font-size: 1.3rem;
+        color: $blackFont;
+        font-weight: 500;
+        margin-bottom: 10px;
+        @include medias(Md){
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+        @include medias(Lg){
+            font-size: 1.5rem;
+        }
+        @include medias(Xl){
+            font-size: 1.6rem;
+        }
+    }
+
+    .btnViolet{
+        @extend .btn_base;
+        margin: 20px 0 10px 0;
+
+        &:before {
+            background: rgba(172, 110, 201, 0.6);  
+        }
+        span { 
+            color: #19423f;
+        }
+        svg {
+            stroke: #19423f;
+        }
+        &:hover:before {
+            background: rgba(172, 110, 201, 0.6);
+        }  
+    }
+}
+
+
+.titulo{
+    position: relative;
+    margin: 35px 0;
+    @include medias(Xs){
+        margin: 65px 20px;
+    }
+    @include medias(Sm){
+        margin: 75px 40px;
+    }
+    @include medias(Lg){
+        margin: 90px 50px;
+    }
+
+    h1{
+        font-family: $mainFont;
+        color: white;
+        font-weight: 700;
+        font-size: 4rem;
+        line-height: 5.5rem;
+        text-align: center;
+        text-shadow: 1px 1px 2px rgb(51, 50, 50);
+        @include medias(Xs){
+            font-size: 5rem;
+            line-height: 6rem;
+        }
+        @include medias(Sm){
+            font-size: 6rem;
+            line-height: 8rem;
+        }
+        @include medias(Lg){
+            font-size: 7rem;
+            line-height: 9rem;
+        }
+        @include medias(Xl){
+            font-size: 9rem;
+            line-height: 11rem;
+        }
+    }
+
+    h2{
+        font-family: $secFont;
+        color: white;
+        font-size: 1.7rem;
+        text-align: center;
+        font-weight: 600;
+        text-shadow: 1px 1px 2px rgb(51, 50, 50);
+        margin: 0 30px;
+        @include medias(Xs){
+            font-size: 2rem;
+            line-height: 3rem;
+        }
+        @include medias(Sm){
+            font-size: 2.5rem;
+            line-height: 3.5rem;
+        }
+        @include medias(Lg){
+            font-size: 2.8rem;
+            line-height: 4rem;
+            letter-spacing: 0.2rem;
+        }
+        @include medias(Xl){
+            font-size: 3rem;
+            line-height: 5rem;
+            letter-spacing: 0.2rem;
+        }
+    }
+}
+
+.cardExcursion{
+    background: $offWhite;
+    padding: 8px;
+    margin-bottom: 15px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+    @include medias(Sm){
+        padding: 15px;
+        margin-bottom: 30px;
+    }
+    @include medias(Md){
+        padding: 10px;
+    }
+    
+    img{
+        border-radius: 3px;
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        @include medias(Sm){
+            margin-bottom: 10px;
+        }
+    }
+
+    h3{
+        font-family: $mainFont;
+        font-size: 1.6rem;
+        color: $blackFont;
+        @include medias(Sm){
+            font-size: 1.7rem;
+        }
+    }
+
+    p{
+        font-family: $secFont;
+        font-size: 1.4rem;
+        color: $blackFont;
+        @include medias(Sm){
+            font-size: 1.5rem;
+        }
+    }
+    
+    h4{
+        font-family: $secFont;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: $blackFont;
+        @include medias(Sm){
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+        }
+        @include medias(Xl){
+            margin-bottom: 20px;
+        }
+    }
+
+
+    .btnAgregar{
+        @extend .btn_base;
+
+        &:before {
+            background: rgba(110, 201, 170, 0.6);  
+        }
+        span { 
+            color: #19423f;
+        }
+        svg {
+            stroke: #19423f;
+        }
+        &:hover:before {
+            background: rgba(110, 201, 170, 0.6);  
+        }  
+    }
+}
+
+///// INFORMACION DE LAS CARDS /////
+
+/*# sourceMappingURL=style.css.map */
+
+.content {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .content .content-overlay {
+    background: rgba(0,0,0,0.7);
+    position: absolute;
+    height: 99%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    -webkit-transition: all 0.4s ease-in-out 0s;
+    -moz-transition: all 0.4s ease-in-out 0s;
+    transition: all 0.4s ease-in-out 0s;
+  }
+  
+  .content:hover .content-overlay{
+    opacity: 1;
+  }
+  
+  .content-image{
+    width: 100%;
+  }
+  
+  .content-details {
+    position: absolute;
+    text-align: center;
+    padding-left: 1em;
+    padding-right: 1em;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+  }
+  
+  .content:hover .content-details{
+    top: 50%;
+    left: 50%;
+    opacity: 1;
+  }
+  
+  .content-details h3{
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+  }
+  
+  .content-details p{
+    color: #fff;
+    font-size: 1.5em;
+  }
+  
+  .fadeIn-bottom{
+    top: 80%;
+  }
+
+
+//// MODAL MIS EXCURSIONES ////
+
+.tituloModal{
+    color: $blackFont;
+    font-family: $mainFont;
+}
+
+.totalModal{
+    color: $blackFont;
+    font-family: $mainFont;
+    font-weight: 600;
+    text-align: right;
+    padding-right: 10px;
+    @include medias(Sm){
+        padding-right: 30px;
+    }
+}
+
+#botonVaciar{
+    background: rgba(201, 121, 110, 0.6);
+    color: $blackFont;
+    font-family: $mainFont;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 20px;
+    margin: 5px;
+    padding: 5px 10px 2.5px 10px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+    @include medias(Sm){
+        font-size: 1.1rem;
+    } 
+    @include medias(Md){
+        font-size: 1.2rem;
+        padding: 5px 12px 2.5px 12px;
+    } 
+    @include medias(Lg){
+        font-size: 1.3rem;
+        padding: 5px 15px;
+    } 
+    @include medias(Xl){
+        font-size: 1.4rem;
+        padding: 5px 20px;
+    } 
+}
+
+#MiListaBotonAgregar{
+    background: rgba(110, 201, 170, 0.6);  
+    color: $blackFont;
+    font-family: $mainFont;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 20px;
+    margin: 5px;
+    padding: 5px 10px 2.5px 10px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);  
+    @include medias(Sm){
+        font-size: 1.1rem;
+    } 
+    @include medias(Md){
+        font-size: 1.2rem;
+        padding: 5px 12px 2.5px 12px;
+    } 
+    @include medias(Lg){
+        font-size: 1.3rem;
+        padding: 5px 15px;
+    }
+    @include medias(Xl){
+        font-size: 1.4rem;
+        padding: 5px 20px;
+    }  
+}
+
+#botonContratar{
+    background: rgba(110, 201, 170, 0.6);  
+    color: $blackFont;
+    font-family: $mainFont;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 20px;
+    margin: 5px;
+    padding: 5px 10px 2.5px 10px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);  
+    @include medias(Sm){
+        font-size: 1.1rem;
+    } 
+    @include medias(Md){
+        font-size: 1.2rem;
+        padding: 5px 12px 2.5px 12px;
+    } 
+    @include medias(Lg){
+        font-size: 1.3rem;
+        padding: 5px 15px;
+    } 
+    @include medias(Xl){
+        font-size: 1.4rem;
+        padding: 5px 20px;
+    } 
+}
+
+//// MODAL RESUMEN ////
+
+#modalResumenLabel{
+    margin-left: 10px;
+    color: $blackFont;
+    font-family: $mainFont;
+}
+
+#totalResumen{
+    text-align: right;
+    color: $blackFont;
+    font-family: $mainFont;
+    padding-right: 10px;
+    @include medias(Lg){
+        padding-right: 20px;
+    }
+}
+
+
+//// FOOTER ////
+
+.footer{
+    position: relative;
+    margin-top: 50px;
+    padding: 20px 15px 0 15px;
+    border-top: solid 1px rgb(66, 65, 65);
+    color: white;
+    font-family: $secFont;
+    height: auto;
+    @include medias(Md){
+        margin-top: 70px;
+        padding: 20px 20px 0 20px;
+    }
+    @include medias(Lg){
+        padding: 40px 30px 10px 30px;
+        border-top: solid 1.5px rgb(66, 65, 65);
+    }
+
+    h3{
+        font-size: 1.4rem;
+        @include medias(Sm){
+            font-size: 1.5rem;
+        }
+        @include medias(Lg){
+            font-size: 1.6rem;
+        }
+        @include medias(Xl){
+            font-size: 1.7rem;
+        }
+    }
+
+    p{
+        font-size: 1.2rem;
+        @include medias(Sm){
+            font-size: 1.3rem;
+        }
+        @include medias(Lg){
+            font-size: 1.4rem;
+        }
+        @include medias(Xl){
+            font-size: 1.5rem;
+        }
+    }
+
+    a{
+        text-decoration: none;
+        color: white;
+        font-size: 1.2rem;
+        @include medias(Sm){
+            font-size: 1.3rem;
+        }
+        @include medias(Lg){
+            font-size: 1.4rem;
+        }
+        @include medias(Xl){
+            font-size: 1.5rem;
+        }
+    }
+
+    img{
+        width: 15px;
+        height: 15px;
+        margin-right: 5px;
+        @include medias(Sm){
+            width: 18px;
+            height: 18px;
+            margin-right: 8px;
+        }
+        @include medias(Lg){
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+        @include medias(Xl){
+            width: 25px;
+            height: 25px;
+            margin-right: 15px;
+        }
+    }
+
+    .copyright{
+        margin-top: 30px;
+        @include medias(Lg){
+            margin-top: 50px;
+        }
+    }
+}
+
+/// MAS BOTONES /////
+
+.btnEliminar{
+    @extend .btn_base;
+
+    &:before {
+        background: rgba(201, 121, 110, 0.6);  
+    }
+    span { 
+        color: #19423f;
+    }
+    svg {
+        stroke: #19423f;
+    }
+    &:hover:before {
+        background: rgba(201, 121, 110, 0.6);   
+    }  
+}
+
+.btnFin{
+    @extend .btn_base;
+    margin: 20px 0 10px 0;
+
+    &:before {
+        background: rgba(172, 110, 201, 0.6);  
+    }
+    span { 
+        color: #19423f;
+    }
+    svg {
+        stroke: #19423f;
+    }
+    &:hover:before {
+        background: rgba(172, 110, 201, 0.6);
+    }  
+}
+
+
+
+

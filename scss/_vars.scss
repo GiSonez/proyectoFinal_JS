@@ -1,0 +1,151 @@
+						//variables globales
+
+			//fuentes
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600&display=swap');
+
+
+$mainFont: 'Poppins', sans-serif;
+$secFont: 'Raleway', sans-serif;
+
+
+			//color principal fuente
+
+$blackFont: rgb(20, 20, 20);
+$offWhite: rgb(250, 246, 246);
+
+
+
+			//extends Botones
+
+/* From uiverse.io by @alexmaracinaru */
+.btn_base {
+    position: relative;
+    margin: auto;
+    padding: 4.5px 12px;
+    transition: all 0.2s ease;
+    border: none;
+    background: none;
+   
+        &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        border-radius: 50px;
+        background: #b1dae7;
+        width: 30px;
+        height: 30px;
+        transition: all 0.3s ease;
+    }
+   
+   span {
+    position: relative;
+    font-family: $mainFont;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    color: #234567;
+   }
+   
+   svg {
+    width: 15px;
+    height: 10px;
+    position: relative;
+    top: 0;
+    margin-left: 10px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #234567;
+    stroke-width: 2;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
+   }
+   
+   &:hover:before {
+    width: 100%;
+    background: #b1dae7;
+   }
+   
+   &:hover svg {
+    transform: translateX(0);
+   }
+   
+   &:active {
+    transform: scale(0.95);
+   }
+}
+// @extend .btn_base;
+
+
+
+.btnBase{
+	background: black;
+	width: 50px;
+	height: 25px;
+	border: none;
+	color: white;
+	font-size: 1.1rem;
+	font-family: $mainFont;
+	letter-spacing: 0.1rem;
+}
+// @extend .btnBase;
+
+
+			//mixins
+
+@mixin d-flex($direction, $justify, $align){
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $justify;
+	align-items: $align;
+}
+	//@include d-flex(column, center, center);
+
+
+		//mixins breakpoints
+
+@mixin medias($breakpoint){
+	
+	@if $breakpoint == Xs{
+		@media (min-width: 400px){
+			@content;
+		}
+	}
+
+	@if $breakpoint == Sm{
+		@media (min-width: 576px){
+			@content;
+		}
+	}
+
+	@if $breakpoint == Md{
+		@media (min-width: 768px){
+			@content;
+		}
+	}
+
+	@if $breakpoint == Lg{
+		@media (min-width: 992px){
+			@content;
+		}
+	}
+
+	@if $breakpoint == Xl{
+		@media (min-width: 1200px){
+			@content;
+		}
+	}
+
+	@if $breakpoint == Xxl{
+		@media (min-width: 1400px){
+			@content;
+		}
+	}
+}
+
+//@include medias(Md)

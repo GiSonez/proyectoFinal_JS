@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Bootstrap css -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+<!-- Mi css -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Viví Paraná</title>
+
+</head>
+
+<body class="fondo">
+
+    <!-- Inicio Main -->
+    <main>
+      
+                <div class="usuario" id ="usuario" hidden>
+                    <img src="img/usuario.svg" alt="Ícono del usuario">
+                    <p id="nombreSesion">Nombre</p>
+                    <button type="button" class="btn btnSalir" data-bs-toggle="modal" data-bs-target="#modalExcursiones" id="botonMiLista">Mi Lista</button>
+                    <button type="button" class="btn btnSalir" id="botonSalir">Salir</button>
+                </div>
+                
+      
+        <div class="titulo">
+            <h1>Viví Paraná</h1>
+            <h2>Armá tu propio paquete de excursiones y conocé la ciudad!</h2>    
+        </div>
+
+
+    <!-- Formulario ingreso nombre del usuario -->
+
+          <div class="container-fluid" id="inicio">
+            <form class="row justify-content-center align-items-center" id="formulario">
+                
+                <div class="formulario p-5">
+                    <label for="exampleFormControlInput1" class="form-label p-2">Ingresá tu nombre y apellido</label>
+                    <input type="name" class="form-control" id="nombreUsuario" placeholder="Juanita Perez" required>
+                    <button  type="submit" class="btnViolet">
+                        <span>Ingresar</span>
+                        <svg viewBox="0 0 13 10">
+                        <path d="M1,5 L11,5"></path>
+                        <polyline points="8 1 12 5 8 9"></polyline>
+                        </svg>
+                    </button>
+                </div>
+
+            </form>
+        </div>
+        
+    <!--  Inicio sección Tarjetas excursiones  -->
+
+        <section class="container-fluid pe-5 ps-5" id="menu" hidden>
+            <div class="row" id="principal">
+            </div>
+        </section>
+
+    <!--  Fin sección Tarjetas excursiones  -->
+
+    <!-- Modal Mi Lista-->
+    <div class="modal fade" id="modalExcursiones" data-bs-backdrop="static" tabindex="-1" aria-labelledby="modalExcursionesLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable ">
+        <div class="modal-content ">
+
+            <div class="modal-header" >
+            <h2 class="modal-title tituloModal m-2" id="modalExcursionesLabel">Mis Excursiones</h2> <br>
+            </div>
+
+            <div class="modal-body mt-4 mb-4">
+                <section class="container-fluid">
+                    <div class="row" id="miLista">
+                    </div>
+                </section>
+            </div>
+            <div>
+                <h2 class="totalModal m-4" id="totalLista"></h2>   
+            </div>    
+            <div class="modal-footer d-flex justify-content-evenly p-5">
+                <button type="button" class="btn btn-outline-danger" id="botonVaciar">Vaciar Mi Lista</button>
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal" id="MiListaBotonAgregar">Agregar Excursiones</button>
+                <button type="button" class="btn btn-outline-success" id="botonContratar">Contratar Paquete</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- Fin Modal Mi Lista-->
+    
+    <!-- Modal Resumen Compra-->
+    <div class="modal fade" id="modalResumen" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalResumenLabel" >
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable ">
+            <div class="modal-content ">
+
+                <div class="modal-header" >
+                    <h2 class="modal-title m-3" id="modalResumenLabel">Resumen</h2> <br>
+                </div>
+
+                <div class="modal-body m-4">
+                    <section class="container-fluid">
+                        <div class="row" id="resumenCompra">
+                        </div>
+                    </section>
+                </div>
+
+                <div>
+                    <h2 class="m-3" id="totalResumen"></h2>   
+                </div> 
+
+                <div class="modal-footer m-4 pt-4">
+                    <button class="btnFin" id="botonFinalizar" data-bs-dismiss="modal">
+                        <span>Finalizar</span>
+                        <svg viewBox="0 0 13 10">
+                        <path d="M1,5 L11,5"></path>
+                        <polyline points="8 1 12 5 8 9"></polyline>
+                        </svg>
+                    </button>                
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fin Modal Resumen Compra-->
+
+
+
+    </main>
+<!-- Fin Main -->
+
+<!-- Inicio Footer -->
+    <footer class="footer">
+            <section class="container-fluid">
+                <div class="row">
+    
+                    <div class="col-sm-12 col-md-4 col-lg-3 mb-5">
+                            <h3>Preguntas frecuentes</h3>
+                    </div>
+    
+                    <div class="col-sm-12 col-md-4 col-lg-3 mb-5">
+                        <div>
+                            <h3 class="mb-3">Seguinos en las redes</h3>
+                            <a href="https://instagram.com" target="_blank">
+                            <img src="img/instagram.svg" alt="Seguinos en Instagram">
+                            </a>
+                            <a href="https://facebook.com" target="_blank">
+                            <img src="img/facebook.svg" alt="Seguinos en Facebook">
+                            </a>
+                        </div>
+                    </div>
+    
+                    <div class="col-sm-12 col-md-3 mb-5">
+                        <h3 class="mb-3">Contacto</h3>
+                            <div class="d-flex">
+                                <img src="img/correo.svg" alt="Logo correo electronico">
+                                <p>info@viviparana.com</p>
+                            </div>
+                            <div>
+                                <img src="img/ubicacion.svg" alt="Logo ubicación">	
+                                <a href="https://goo.gl/maps/CpGxnbTo4fdgp6K77">Paraná, Entre Ríos</a>	
+                            </div>
+                    </div>
+    
+                    <div class="col-sm-12 mb-5 d-flex justify-content-start copyright">
+                            <p>2022 | Copyright | Proyecto creado por Gisela Soñez con fines educativos.</p>	
+                    </div>
+                    
+                </div>
+            </section>
+
+    </footer>
+<!-- Fin Footer    -->
+
+<!-- Bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- Sweet Alert js -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- Mi js -->
+<script src="js/main.js"></script>
+
+</body>
+</html>
+
+
+
+        <!-- <section class="menu container-fluid" id= "menu">
+
+            <div class="row" id="listaDisponibles">
+            </div>
+
+        </section>
+
+        <section class="miLista container-fluid" id= "misExcursiones">
+
+            <div class="row" id="miLista">
+            </div>
+
+        </section>
+
+        <section class="resumen container-fluid" id= "resumen">
+
+            <div class="row" id="resumenCompra">
+                
+            </div>
+
+        </section> -->
